@@ -10,6 +10,9 @@
 
 export default {
 	async fetch(request, env, ctx) {
+	
+	  const dotenv = require('dotenv');
+	  dotenv.config()
   
 	  const data = await request.json();
   
@@ -22,13 +25,11 @@ export default {
 		"messages": messages,
 	  });
   
-	  const openai_api_key = "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";
-  
 	  const requestOptions = {
 		method: 'POST',
 		headers: {
 		'Content-Type': 'application/json',
-		'Authorization': 'Bearer ' + openai_api_key,
+		'Authorization': 'Bearer ' + process.env.API_KEY,
 		},
 		body: raw,
 		redirect: 'follow'
