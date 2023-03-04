@@ -14,7 +14,7 @@ export default {
 	  const data = await request.json();
   
 	  const messages = [
-		{"role": "system", "content": "You are Ricky's helpful ChatGPT assistant"},
+		{"role": "system", "content": "You are Tanner's helpful ChatGPT assistant"},
 		{"role": "user", "content": data.question}
 	  ]
 	  var raw = JSON.stringify({
