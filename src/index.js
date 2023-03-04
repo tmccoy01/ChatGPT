@@ -10,15 +10,14 @@
 
 export default {
 	async fetch(request, env, ctx) {
-	
-	  const dotenv = require('dotenv');
-	  dotenv.config()
-  
-	  const data = await request.json();
+	  
+	  //   console.log(process.env.API_KEY);
+
+	//   const data = await request.json();
   
 	  const messages = [
 		{"role": "system", "content": "You are Ricky's helpful ChatGPT assistant"},
-		{"role": "user", "content": data.question}
+		{"role": "user", "content": "How big is the Earth?"}
 	  ]
 	  var raw = JSON.stringify({
 		"model": "gpt-3.5-turbo",
@@ -29,7 +28,7 @@ export default {
 		method: 'POST',
 		headers: {
 		'Content-Type': 'application/json',
-		'Authorization': 'Bearer ' + process.env.API_KEY,
+		'Authorization': 'Bearer ' + env.API_KEY
 		},
 		body: raw,
 		redirect: 'follow'

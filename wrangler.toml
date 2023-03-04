@@ -1,3 +1,7 @@
 name = "sirichatgpt"
 main = "src/index.js"
 compatibility_date = "2023-03-03"
+node_compat = true
+
+[vars]
+# API_KEY
