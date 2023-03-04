@@ -10,14 +10,12 @@
 
 export default {
 	async fetch(request, env, ctx) {
-	  
-	  //   console.log(process.env.API_KEY);
 
-	//   const data = await request.json();
+	  const data = await request.json();
   
 	  const messages = [
 		{"role": "system", "content": "You are Ricky's helpful ChatGPT assistant"},
-		{"role": "user", "content": "How big is the Earth?"}
+		{"role": "user", "content": data.question}
 	  ]
 	  var raw = JSON.stringify({
 		"model": "gpt-3.5-turbo",
